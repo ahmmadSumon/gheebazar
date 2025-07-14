@@ -49,7 +49,7 @@ export default function GheeBenefitsGrid() {
   return (
     <section className="bg-yellow-50 dark:bg-zinc-800 py-10 px-6">
 <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
+        className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}

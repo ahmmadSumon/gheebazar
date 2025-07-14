@@ -200,7 +200,7 @@ export const NavbarLogo = () => {
         alt="logo"
         width={40}
         height={40} />
-      <span className="font-medium text-xl text-black dark:text-white">Ghee Bazar</span>
+      <span className="font-medium text-xl text-yellow-600 dark:text-white">Ghee Bazar</span>
     </Link>
   );
 };
