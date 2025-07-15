@@ -11,7 +11,7 @@ export function LampDemo() {
   return (
     <LampContainer>
    
-       <div className="mx-auto  flex max-w-7xl md:h-[100vh] flex-col flex-col-reverse items-center justify-center px-4 py-10 md:flex-row pt-[65vh]   md:px-8">
+       <div className="mx-auto  flex max-w-7xl md:h-[100vh] flex-col flex-col-reverse items-center justify-center px-4 py-10 md:flex-row pt-[95vh] md:pt-[65vh]   md:px-8">
              <motion.div
         initial={{ opacity: 0, y: 500 }}
         animate={{ opacity: 1, y: 0 }}

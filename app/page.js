@@ -18,9 +18,15 @@ export default function Home() {
     <div className="bg-[url('/hero-bg.svg')] bg-cover bg-center">
      <HeroSection/>
     </div>
-    <GheeBenefitsGrid/>
+    <div className="hidden md:block">
+ <GheeBenefitsGrid/>
+    </div>
+   
     <div className="bg-[url('/products.svg')] bg-no-repeat bg-[#FDFCEF] rounded-b-[410px]">
     <CanvasRevealEffectDemo/>
+    </div>
+      <div className="block md:hidden">
+ <GheeBenefitsGrid/>
     </div>
 <div className="" >
     
