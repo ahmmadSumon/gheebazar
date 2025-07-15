@@ -9,6 +9,7 @@ import { MultiStepLoaderDemo } from "../components/MultiStepLoaderDemo";
 import { InfiniteMovingCardsDemo } from "../components/InfiniteMovingCardsDemo";
 import AboutUs from "../components/AboutUs";
 import GheeBenefitsGrid from "../components/GheeBenefitsGrid";
+import CartSheet from "@/components/CartSheet";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
       <InfiniteMovingCardsDemo/>
     </div>
   <AboutUs/>
+  <CartSheet/>
     
     
     </div>

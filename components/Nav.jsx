@@ -14,6 +14,8 @@ import { useState } from "react";
 import { RiAccountPinCircleFill } from "react-icons/ri";
 import { GiBeachBag } from "react-icons/gi";
 import Link from "next/link";
+import CartSheet from "../components/CartSheet";
+
 export function NavbarDemo() {
   const navItems = [
    
@@ -32,7 +34,17 @@ export function NavbarDemo() {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const handleCallClick = () => {
+  const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
 
+  const phoneNumber = "01751260010" // 🔁 Replace with your actual number
+
+  if (isMobile) {
+    window.location.href = `tel:${phoneNumber}`
+  } else {
+    window.open(`https://wa.me/88${phoneNumber}`, "_blank")
+  }
+}
   return (
     <div className="relative w-full">
       <Navbar>
@@ -41,12 +53,17 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-2">
-             <div className="text-2xl text-[#2E8B57] cursor-pointer "> <GiBeachBag /></div>
-            <div className="text-2xl text-[#2E8B57]  cursor-pointer"> <RiAccountPinCircleFill /></div>
+             <div className="text-2xl text-[#2E8B57] cursor-pointer z-50"> <CartSheet/> </div>
+           <div className="text-2xl text-[#2E8B57] z-50 cursor-pointer"> 
+              <Link href="/account">
+              <RiAccountPinCircleFill />
+              </Link>
+              </div>
            
           
           <button
   type="button"
+   onClick={handleCallClick} // ✅ Add this
   className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-3 font-semibold text-[#2E8B57] border-2 border-[#2E8B57] transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)]  hover:text-white hover:shadow-transparent active:scale-95"
 >
   <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E8B57] opacity-0 transition-[width,height,opacity] duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:h-[220px] group-hover:w-[220px] group-hover:opacity-100" />
@@ -83,10 +100,17 @@ export function NavbarDemo() {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
+              <div className="text-2xl text-[#2E8B57] cursor-pointer z-50"> <CartSheet/> </div>
+            <div className="text-2xl text-[#2E8B57] z-50 cursor-pointer"> 
+              <Link href="/account">
+              <RiAccountPinCircleFill />
+              </Link>
+              </div>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
           </MobileNavHeader>
+         
 
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (

@@ -3,6 +3,7 @@ import "./globals.css"
 import { NavbarDemo } from "../components/Nav"
 import Footer from "../components/Footer"
 import SmoothScrollProvider from "../components/SmoothScrollProvider"
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           <NavbarDemo />
           {children}
           <Footer />
+          <Toaster/>
         </SmoothScrollProvider>
       </body>
     </html>
