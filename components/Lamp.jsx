@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "motion/react"; // or 'framer-motion'
 import { LampContainer } from "../components/ui/lamp";
 import Image from "next/image";
+import Link from "next/link";
 
 // Wrap Next.js Image with motion
 const MotionImage = motion(Image);
@@ -43,13 +44,18 @@ export function LampDemo() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-8 flex flex-col items-center gap-4 sm:flex-row md:items-start"
         >
-          <button className="rounded-full bg-[#2E8B57] px-8 py-3 font-semibold text-white transition hover:bg-[#276E48]">
+          <Link href='/shop'>
+           <button className="rounded-full bg-[#2E8B57] border-2 px-8 py-3 border-[#2E8B57] font-semibold cursor-pointer text-white transition hover:bg-white  hover:text-[#2E8B57]">
             Shop&nbsp;Now
           </button>
-
-          <button className="rounded-full border-2 border-[#2E8B57] px-8 py-3 font-semibold text-[#2E8B57] transition hover:bg-[#2E8B57] hover:text-white">
+          </Link>
+         
+          <Link href='/about'>
+           <button className="rounded-full border-2 cursor-pointer border-[#2E8B57] px-8 py-3 font-semibold text-[#2E8B57] transition hover:bg-[#2E8B57] hover:text-white">
             Learn&nbsp;More
           </button>
+          </Link>
+         
         </motion.div>
       </motion.div>
         <div className="w-full md:w-1/2 text-center md:text-left">
